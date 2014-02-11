@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VICE Guide to Travel</title>
 <style type="text/css">
-#map-canvas {
-  height: 400px;
-  margin: 0;
-  padding: 0;
-  width: 960px;
-}
+  #map-canvas {
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    width: 960px;
+  }
 </style>
 
 <!-- Latest compiled and minified CSS -->
@@ -44,14 +44,14 @@
               document.getElementById('visualization'));
           table.draw(response.getDataTable(), {
             showRowNumber: true,
-      allowHtml: true,
-      page: 'enable',
-      pageSize: 10
+            allowHtml: true,
+            page: 'enable',
+            pageSize: 10
           });
         });
       }
 
-        google.setOnLoadCallback(drawTable);
+      google.setOnLoadCallback(drawTable);
 
       function initialize() {
         google.maps.visualRefresh = true;
@@ -77,14 +77,11 @@
         });
       }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', initialize);
     
-    
-    function onYouTubePlayerReady(playerId) {
-      ytplayer = document.getElementById("myytplayer");
-      ytplayer.playVideo();
-          
-
+      function onYouTubePlayerReady(playerId) {
+        ytplayer = document.getElementById("myytplayer");
+        ytplayer.playVideo();
     }
   </script>
   </head>
@@ -97,59 +94,59 @@
                </td>
            </tr>
            <tr>
-               <td width="50%" id="video">
-                    <script type="text/javascript" src="swfobject.js"></script>    
-  <div id="ytapiplayer">
-    Select a video on the right to begin watching
-  </div>
+              <td width="50%" id="video">
+                  <script type="text/javascript" src="swfobject.js"></script>    
+                
+                  <div id="ytapiplayer">
+                    Select a video on the right to begin watching
+                  </div>
 
-  <script type="text/javascript">
-  var globalinit = 0;
-  </script>
-
+                  <script type="text/javascript">
+                  var globalinit = 0;
+                  </script>
                     
                </td>
                <td width="50%">
                    <div>
-                   <label>Region:</label>
-                   <select id="region" onchange="drawTable();">
-                        <option value="">All</option>
-                        <option value="Africa">Africa</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Middle East">Middle East</option>                    
-                        <option value="North America">North America</option>
-                        <option value="Oceania">Oceania</option>
-                        <option value="South America">South America</option>
-                   </select>
+                     <label>Region:</label>
+                     <select id="region" onchange="drawTable();">
+                          <option value="">All</option>
+                          <option value="Africa">Africa</option>
+                          <option value="Asia">Asia</option>
+                          <option value="Europe">Europe</option>
+                          <option value="Middle East">Middle East</option>                    
+                          <option value="North America">North America</option>
+                          <option value="Oceania">Oceania</option>
+                          <option value="South America">South America</option>
+                     </select>
                    </div>
                    <div id="visualization"></div>
                </td>
            </tr>
-       </table> 
-        </div>
+        </table> 
+    </div>
   <script type="text/javascript">
-  $(document).ready(function(){
-
-    //change from video1ID to a class
-    $('body').on("click",".video1",function(){
-      var vid1;
-    //here is where we will add the grabber to get the vid. we need to change the a record to href of "#" and make a val field with the video id
-      vid1 = $(this).attr("val")
-      if(globalinit == 0){
-        var params = { allowScriptAccess: "always" };
-        var atts = { id: "myytplayer" };
-        swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
-
-        //swfobject.embedSWF("http://www.youtube.com/v/MDQ7Vnq72A8?enablejsapi=1&playerapiid=ytplayer&version=3",
-                          // "ytapiplayer", "425", "356", "8", null, null, params, atts);
-        globalinit = 1;
-      } else {
-        ytplayer.loadVideoById(vid1,2,"large");
-        //ytplayer.loadVideoById("MDQ7Vnq72A8",5,"large");
-      }
+    $(document).ready(function(){
+  
+      //change from video1ID to a class
+      $('body').on("click",".video1",function(){
+        var vid1;
+      //here is where we will add the grabber to get the vid. we need to change the a record to href of "#" and make a val field with the video id
+        vid1 = $(this).attr("val")
+        if(globalinit == 0){
+          var params = { allowScriptAccess: "always" };
+          var atts = { id: "myytplayer" };
+          swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
+  
+          //swfobject.embedSWF("http://www.youtube.com/v/MDQ7Vnq72A8?enablejsapi=1&playerapiid=ytplayer&version=3",
+                            // "ytapiplayer", "425", "356", "8", null, null, params, atts);
+          globalinit = 1;
+        } else {
+          ytplayer.loadVideoById(vid1,2,"large");
+          //ytplayer.loadVideoById("MDQ7Vnq72A8",5,"large");
+        }
+      });
     });
-  });
-      </script>
+  </script>
   </body>
 </html>

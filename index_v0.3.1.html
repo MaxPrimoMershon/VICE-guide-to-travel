@@ -5,25 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VICE Guide to Travel</title>
-<style type="text/css">
-  #map-canvas {
-    height: 400px;
-    margin: 0;
-    padding: 0;
-    width: 960px;
-  }
-</style>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style type="text/css">
+      #map-canvas {
+        height: 400px;
+        margin: 0;
+        padding: 0;
+        width: 960px;
+      }
+    </style>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"> 
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script type="text/javascript"
-      src="http://maps.google.com/maps/api/js?sensor=false">
-    </script>
+    <script type="text/javascript"src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
     <script type="text/javascript">
       google.load('visualization', '1', { packages: ['table'] });
@@ -102,13 +100,14 @@
                   </div>
 
                   <script type="text/javascript">
-                  var globalinit = 0;
+                    var globalinit = 0;
                   </script>
                     
                </td>
                <td width="50%">
                    <div>
                      <label>Region:</label>
+                     
                      <select id="region" onchange="drawTable();">
                           <option value="">All</option>
                           <option value="Africa">Africa</option>
@@ -120,6 +119,7 @@
                           <option value="South America">South America</option>
                      </select>
                    </div>
+                   
                    <div id="visualization"></div>
                </td>
            </tr>
@@ -127,8 +127,6 @@
     </div>
   <script type="text/javascript">
     $(document).ready(function(){
-  
-      //change from video1ID to a class
       $('body').on("click",".video1",function(){
         var vid1;
       //here is where we will add the grabber to get the vid. we need to change the a record to href of "#" and make a val field with the video id
@@ -140,7 +138,6 @@
           globalinit = 1;
         } else {
           ytplayer.loadVideoById(vid1,2,"large");
-          //ytplayer.loadVideoById("MDQ7Vnq72A8",5,"large");
         }
       });
     });

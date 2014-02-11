@@ -137,9 +137,6 @@
           var params = { allowScriptAccess: "always" };
           var atts = { id: "myytplayer" };
           swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
-  
-          //swfobject.embedSWF("http://www.youtube.com/v/MDQ7Vnq72A8?enablejsapi=1&playerapiid=ytplayer&version=3",
-                            // "ytapiplayer", "425", "356", "8", null, null, params, atts);
           globalinit = 1;
         } else {
           ytplayer.loadVideoById(vid1,2,"large");

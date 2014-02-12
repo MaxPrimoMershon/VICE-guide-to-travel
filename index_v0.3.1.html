@@ -87,6 +87,24 @@
 
     <div class="container">
        <table align="center">      
+            <tr>
+            <td width=50% align="center" valign="center">
+              <img src="http://tour-aroundtheworld.com/wp-content/uploads/2013/10/vice-guide-to-travel.jpg">
+            </td>
+               <td width="50%" align="center">
+
+                  <script type="text/javascript" src="swfobject.js"></script>    
+                
+                  <div id="ytapiplayer">
+                    Select a video on the right to begin watching
+                  </div>
+
+                  <script type="text/javascript">
+                    var globalinit = 0;
+                  </script>
+
+               </td>
+           </tr>
            <tr>
               <td width="50%">
                 <div id="map-canvas"></div>
@@ -110,21 +128,6 @@
                    <div id="visualization"></div>
                </td>
            </tr>
-           <tr>
-               <td colspan="2" width="100%" align="center">
-
-                  <script type="text/javascript" src="swfobject.js"></script>    
-                
-                  <div id="ytapiplayer">
-                    Select a video on the right to begin watching
-                  </div>
-
-                  <script type="text/javascript">
-                    var globalinit = 0;
-                  </script>
-
-               </td>
-           </tr>
         </table> 
     </div>
   <script type="text/javascript">
@@ -135,7 +138,7 @@
         if(globalinit == 0){
           var params = { allowScriptAccess: "always" };
           var atts = { id: "myytplayer" };
-          swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "853", "480", "8", null, null, params, atts);
+          swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "480", "270", "8", null, null, params, atts);
           globalinit = 1;
         } else {
           ytplayer.loadVideoById(vid1,0,"large");

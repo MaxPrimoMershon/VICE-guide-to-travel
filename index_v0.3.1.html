@@ -128,7 +128,7 @@
     </div>
   <script type="text/javascript">
     $(document).ready(function(){
-      $("#map-canvas").on("click",".video1",function(){
+      $('body').on("click",".video1",function(){
         var vid1;
       //here is where we will add the grabber to get the vid. we need to change the a record to href of "#" and make a val field with the video id
         vid1 = $(this).attr("val")

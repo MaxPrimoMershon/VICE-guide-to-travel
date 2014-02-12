@@ -128,14 +128,14 @@
     </div>
   <script type="text/javascript">
     $(document).ready(function(){
-      $('body').on("click",".video1",function(){
+      $('body').on("click",'a',function(){
         var vid1;
       //here is where we will add the grabber to get the vid. we need to change the a record to href of "#" and make a val field with the video id
         vid1 = $(this).attr("val")
         if(globalinit == 0){
           var params = { allowScriptAccess: "always" };
           var atts = { id: "myytplayer" };
-          swfobject.embedSWF("http://www.youtube.com/v/"+"MDQ7Vnq72A8"+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
+          swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
           globalinit = 1;
         } else {
           ytplayer.loadVideoById(vid1,0,"large");

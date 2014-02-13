@@ -86,7 +86,7 @@
      var globalinit = 0;
 
     $(document).ready(function(){
-      $('body').on("click",".video1",function(){
+      $('body').live("click",".video1",function(){
         var vid1 = $(this).attr("val")
         alert(vid1);
         if(globalinit == 0){

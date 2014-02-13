@@ -53,11 +53,6 @@
 
       google.setOnLoadCallback(drawTable);
 
-        google.visualization.events.addListener(table, 'select',
-            function() {
-              alert("Hey!");
-            });  
-
       function initialize() {
         google.maps.visualRefresh = true;
         var mapDiv = document.getElementById('map-canvas');
@@ -115,6 +110,11 @@
       });
     });
     
+    
+            google.visualization.events.addListener(table, 'select',
+            function() {
+              alert("Hey!");
+            }); 
   </script>
   </head>
   <body>

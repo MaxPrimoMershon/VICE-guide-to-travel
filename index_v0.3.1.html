@@ -48,10 +48,16 @@
             pageSize: 10
           });
         });
-        
+        google.visualization.events.addListener(table, 'select', selectHandler);
       }
 
+      function selectHandler(){
+       alert('Success!!!'); 
+      }
+      
       google.setOnLoadCallback(drawTable);
+
+
 
       function initialize() {
         google.maps.visualRefresh = true;
@@ -88,10 +94,6 @@
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
-    
-      google.visualization.events.addListener(table, 'select', function(){
-        alert("hey!");
-      });
     
       function onYouTubePlayerReady(playerId) {
         ytplayer = document.getElementById("myytplayer");

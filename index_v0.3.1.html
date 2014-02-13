@@ -49,13 +49,14 @@
           });
         });
         
+      }
+
+      google.setOnLoadCallback(drawTable);
+
         google.visualization.events.addListener(table, 'select',
             function() {
               alert("Hey!");
             });  
-      }
-
-      google.setOnLoadCallback(drawTable);
 
       function initialize() {
         google.maps.visualRefresh = true;

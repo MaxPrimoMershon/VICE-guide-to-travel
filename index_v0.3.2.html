@@ -85,9 +85,9 @@
 
     var globalinit = 0;
 
-    function displayVideo(){
-        alert("Hey!");
-/*        if(globalinit == 0){
+    function displayVideo(videoID){
+        alert(videoID);
+        if(globalinit == 0){
           var params = { allowScriptAccess: "always" };
           var atts = { id: "myytplayer" };
           swfobject.embedSWF("http://www.youtube.com/v/"+videoID+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "480", "270", "8", null, null, params, atts);
@@ -95,7 +95,7 @@
         } else {
           ytplayer.loadVideoById(videoID,0,"large");
         }
-      });*/
+      });
     };
     
   </script>

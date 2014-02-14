@@ -105,7 +105,7 @@
         if(globalinit == 0){
           var params = { allowScriptAccess: "always" };
           var atts = { id: "myytplayer" };
-          swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "100%", "315", "8", null, null, params, atts);
+          swfobject.embedSWF("http://www.youtube.com/v/"+vid1+"?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "100%", "300", "8", null, null, params, atts);
           globalinit = 1;
         } else {
           ytplayer.loadVideoById(vid1,0,"large");

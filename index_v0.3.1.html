@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+      <link rel="shortcut icon" href="http://s3.amazonaws.com/cuttings/backgrounds/24328/vice%20logo.gif">
     <title>VICE Guide to Travel</title>
 
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -14,11 +14,13 @@
       <style type="text/css">
 
       #map-canvas {
-        height: 400px;
-        margin: 0;
-        padding: 0;
-        width: 480px;
-      }
+      height: 400px;
+      width: 100%;
+          }
+        body
+          {
+              background-color:black;
+          }
     </style>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -31,7 +33,7 @@
       function drawTable() {
         var query = "SELECT 'Country' as 'Country', " +
             "'Hyperlink' as 'VICE Guides' " +
-            'FROM 1mWA12GVNH1CDLO41ProqVCqQZBXXfV_r6YVRljw';
+            'FROM 1KSfPu5LldDOarJaKDbXrNywJTOCUtNI9P0XgA-g';
         var region = document.getElementById('region').value;
         if (region) {
           query += " WHERE 'Region' = '" + region + "'";
@@ -58,7 +60,7 @@
         google.maps.visualRefresh = true;
         var mapDiv = document.getElementById('map-canvas');
         var map = new google.maps.Map(mapDiv, {
-          center: new google.maps.LatLng(10,0),
+          center: new google.maps.LatLng(0,0),
           zoom: 2,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
@@ -68,7 +70,7 @@
           heatmap: { enabled: false },
           query: {
             select: "col2\x3e\x3e1",
-            from: "1mWA12GVNH1CDLO41ProqVCqQZBXXfV_r6YVRljw",
+            from: "1KSfPu5LldDOarJaKDbXrNywJTOCUtNI9P0XgA-g",
             where: ""
           },
           options: {
@@ -79,10 +81,9 @@
       
           google.maps.event.addListener(layer, 'click', function(e) {
 
-          e.infoWindowHtml = '<div class="googft-info-window" >'+
-                             '<strong>VICE-Guide to:</strong>'+
-                             e.row['Country'].value +
-                             '('+e.row['Region'].value+')<br/>'+
+          e.infoWindowHtml = '<div class="googft-info-window text-center" >'+
+                             '<b><u>'+e.row['Region'].value+': '+
+                             e.row['Country'].value+'</u></b>'+'<br/>'+
                              e.row['Hyperlink'].value +
                              '</div>';
           });
@@ -111,47 +112,49 @@
         }
       });
     });
+        
+        $(document).ready(function () {
+    $(window).resize(function(){
+        drawTable();
+    });
+});
     
   </script>
       
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">              
-            <img src="http://tour-aroundtheworld.com/wp-content/uploads/2013/10/vice-guide-to-travel.jpg">
+    <div class="container" style="background-color: black">
+      <div class="row" >
+        <div class="col-md-6" style="padding-top:12px; padding-bottom:12px">              
+            <img class="img-responsive img-thumbnail" style="width: 100%" src="http://tour-aroundtheworld.com/wp-content/uploads/2013/10/vice-guide-to-travel.jpg">
           </div>
         
-          <div class="col-md-6">
+          <div class="col-md-6" style="padding-top:12px; padding-bottom:12px">
                 <div id="ytapiplayer">
-                    Select a video on the right to begin watching
-                  </div>
-          </div>
+            <img class="img-responsive img-thumbnail" style="width: 100%" src="YoutubeVideoPlaceholder_v0.4.png">
+              </div>
+            </div>
         </div>
-    </div>    
-    <div class="container">
-        
-          <div class="col-md-6 pull-left">
+        <div class="row">
+          <div class="col-md-6" style="padding-top:12px; padding-bottom:12px">
               <div id="map-canvas"></div>
           </div>
-        
-          <div class="col-md-6">
-                     <label>Region:</label>
-                     
-                     <select id="region" onchange="drawTable();">
-                          <option value="">All</option>
-                          <option value="Africa">Africa</option>
-                          <option value="Asia">Asia</option>
-                          <option value="Europe">Europe</option>
-                          <option value="Middle East">Middle East</option>                    
-                          <option value="North America">North America</option>
-                          <option value="Oceania">Oceania</option>
-                          <option value="South America">South America</option>
-                     </select>                   
-                   <div id="visualization"></div>
+          <div class="col-md-6" style="padding-top:12px; padding-bottom:12px">
+             <label style="color: white">Region:</label>
+             <select id="region" onchange="drawTable();">
+                  <option value="">All</option>
+                  <option value="Africa">Africa</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Middle East">Middle East</option>                    
+                  <option value="North America">North America</option>
+                  <option value="Oceania">Oceania</option>
+                  <option value="South America">South America</option>
+             </select>                   
+           <div id="visualization"></div>
           </div>
+        </div>
     </div>
-
   </body>
 </html>

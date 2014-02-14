@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>VICE Guide to Travel</title>
-    <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"> 
-    
-    <style type="text/css">
+
+      <style type="text/css">
+
       #map-canvas {
         height: 400px;
         margin: 0;
@@ -48,16 +50,9 @@
             pageSize: 10
           });
         });
-        google.visualization.events.addListener(table, 'select', selectHandler);
       }
 
-      function selectHandler(){
-       alert('Success!!!'); 
-      }
-      
       google.setOnLoadCallback(drawTable);
-
-
 
       function initialize() {
         google.maps.visualRefresh = true;
@@ -82,7 +77,7 @@
           },
         });
       
-        google.maps.event.addListener(layer, 'click', function(e) {
+          google.maps.event.addListener(layer, 'click', function(e) {
 
           e.infoWindowHtml = '<div class="googft-info-window" >'+
                              '<strong>VICE-Guide to:</strong>'+
@@ -94,6 +89,7 @@
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
+    
     
       function onYouTubePlayerReady(playerId) {
         ytplayer = document.getElementById("myytplayer");
@@ -117,28 +113,30 @@
     });
     
   </script>
+      
   </head>
+
   <body>
-
     <div class="container">
-       <table align="center">      
-            <tr>
-            <td width=50% align="center" valign="center">
-              <img src="http://tour-aroundtheworld.com/wp-content/uploads/2013/10/vice-guide-to-travel.jpg">
-            </td>
-               <td width="50%" align="center">
-
-                  <div id="ytapiplayer">
+      <div class="row">
+        <div class="col-md-6">              
+            <img src="http://tour-aroundtheworld.com/wp-content/uploads/2013/10/vice-guide-to-travel.jpg">
+          </div>
+        
+          <div class="col-md-6">
+                <div id="ytapiplayer">
                     Select a video on the right to begin watching
                   </div>
-               </td>
-           </tr>
-           <tr>
-              <td width="50%">
-                <div id="map-canvas"></div>
-               </td>
-               <td width="50%" valign="top">
-                   <div>
+          </div>
+        </div>
+    </div>    
+    <div class="container">
+        
+          <div class="col-md-6 pull-left">
+              <div id="map-canvas"></div>
+          </div>
+        
+          <div class="col-md-6">
                      <label>Region:</label>
                      
                      <select id="region" onchange="drawTable();">
@@ -150,13 +148,10 @@
                           <option value="North America">North America</option>
                           <option value="Oceania">Oceania</option>
                           <option value="South America">South America</option>
-                     </select>
-                   </div>
-                   
+                     </select>                   
                    <div id="visualization"></div>
-               </td>
-           </tr>
-        </table> 
+          </div>
     </div>
+
   </body>
 </html>
